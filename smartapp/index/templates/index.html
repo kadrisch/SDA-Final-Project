@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>smartapp</title>
+    <link rel="stylesheet" href="index/templates/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -36,7 +37,26 @@
           </form>
         </div>
         {% endblock %}
-
+        <div>
+          <input type = checkbox id = "toggle-btn-1">
+          <label for = toggle-btn-1>Remove punctuation</label>
+          <input type = checkbox id = "toggle-btn-2">
+          <label for = toggle-btn-2>Upper case</label>
+          <input type = checkbox id = "toggle-btn-3">
+          <label for = toggle-btn-3>Lower case</label>
+          <input type = checkbox id = "toggle-btn-4">
+          <label for = toggle-btn-4>Newline Remove</label>
+          <input type = checkbox id = "toggle-btn-5">
+          <label for = toggle-btn-5>Extra space Remove</label>
+          <input type = checkbox id = "toggle-btn-6">
+          <label for = toggle-btn-6>Count Characters</label>
+          <input type = checkbox id = "toggle-btn-7">
+          <label for = toggle-btn-7>spell check</label>
+          <input type = checkbox id = "toggle-btn-8">
+          <label for = toggle-btn-8>Generate summary of words</label>
+          <input type = checkbox id = "toggle-btn-9">
+          <label for = toggle-btn-9>Remove stop word of your paragraph</label>
+        </div>
       </div>
     </div>
   </body>
