@@ -24,6 +24,7 @@
 </nav>
   <div class="container">
       <!We are adding CSRF Token to provide security from malicious requests>
+      {% block content %}
       <form action='/guide' method='post'> {% csrf_token %}
           <div class="form-floating mt-4">
           <textarea name="text" class="form-control" placeholder="Enter your text here" id="floatingTextarea2" style="height: 200px"></textarea>
@@ -77,6 +78,7 @@
         <br>
         <button type="submit" class="btn btn-primary" >Submit</button>
       </form>
+      {% endblock %}
   </div>
 <script type="text/javascript" src="{% static 'code.js' %}"></script>
   </body>

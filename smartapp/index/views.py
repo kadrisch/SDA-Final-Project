@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import TemplateView, FormView
 from django.urls import reverse_lazy
-from index.forms import TextArea, Response
+from index.forms import TextArea
 
 
 def hello(request):

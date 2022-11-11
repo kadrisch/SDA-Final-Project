@@ -158,7 +158,6 @@ body{
 .hamburger-menu{
     width:35px;
     height:30px;
-    position:fixed;
     top:12,5px;
     right:50px;
     cursor:pointer;
@@ -169,15 +168,19 @@ body{
   margin:6px 2px;
   background-color:CornflowerBlue;
   transition: all 0.8s;
+
 }
 .change .line-1{
     transform:rotateZ(-405deg) translate(-8px, 5px);
+
 }
 .change .line-2{
     opacity:0;
+
 }
 .change .line-3{
     transform:rotateZ(405deg) translate(-8px, -5px);
+
 }
 .nav-list{
     text-align: right;
