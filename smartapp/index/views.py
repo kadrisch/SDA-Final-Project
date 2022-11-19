@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, FormView
 from django.urls import reverse_lazy
 from .forms import TextForm
-from .logic import punctuation_removal, text_upper
+from .logic import punctuation_removal, text_upper, text_lower, remove_new_line, remove_extra_space, count_characters, spell, wiki, remove_stop_words
+
 
 class IndexPage(FormView):
     template_name = 'index.html'
@@ -25,6 +26,21 @@ def GuidePage(request):
     if bool(form_data['upper_case']):
         changed_data['Upper Case:'] = text_upper(latest_text)
         latest_text = text_upper(latest_text)
+    if bool(form_data['lower_case']):
+        changed_data['Lower Case:'] = text_lower(latest_text)
+        latest_text = text_lower(latest_text)
+    if bool(form_data['new_line_remove']):
+        changed_data['New Line Remove'] = remove_new_line(latest_text)
+        latest_text = remove_new_line(latest_text)
+    if bool(form_data['extra_space_remove']):
+        changed_data['Extra Space Remove'] = remove_extra_space(latest_text)
+        latest_text = remove_extra_space(latest_text)
+    if bool(form_data['count_characters']):
+        changed_data['Count Characters'] = count_characters(latest_text)
+        latest_text = count_characters(latest_text)
+    if bool(form_data['remove_stop_words']):
+        changed_data['Remove Stop Words of Your Paragraph'] = remove_stop_words(latest_text)
+        latest_text = remove_stop_words(latest_text)
     context = {
         'latest_text': latest_text,
         'content': changed_data
