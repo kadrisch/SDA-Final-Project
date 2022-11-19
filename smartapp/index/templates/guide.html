@@ -1,7 +1,25 @@
-{% extends "index.html" %}
-
-{% block content %}
-
-<h2>Your Summary For the Word is</h2>
-
-{% endblock %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>Smart App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static '/styles.css' %}">
+</head>
+<body>
+  <nav class="topnav">
+    <a href="index.html">Smart App</a>
+        <nav class="topnav-right">
+            <a href="/">
+                <div class="HM"></div>
+                <div class="HM"></div>
+                <div class="HM"></div>
+            </a>
+        </nav>
+  </nav>
+        <div class="guide">
+             <h2>result:</h2>
+                 {{ latest_text }}
+        </div>
+</body>
+</html>
