@@ -3,8 +3,8 @@
 	<form method="post">
 		{% csrf_token %}
 
-		<div class="textbox">
-			<textarea placeholder="Enter Your Text Here!" cols="120" rows="14" name="textarea"></textarea>
+		<div class="form-floating mt-4">
+			<textarea placeholder="Enter Your Text Here!" class="form-control" style="height:200px" name="textarea"></textarea>
 			<div class="main">
 				<br/>
 					<input type="checkbox" id="check1" class="toggle" name="RemovePunctuations">
