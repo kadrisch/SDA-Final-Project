@@ -38,6 +38,12 @@ def GuidePage(request):
     if bool(form_data['count_characters']):
         changed_data['Count Characters'] = count_characters(latest_text)
         latest_text = count_characters(latest_text)
+    if bool(form_data['spell_check']):
+        changed_data['Spell Check'] = spell(latest_text)
+        latest_text = spell(latest_text)
+    if bool(form_data['generate_word_summary']):
+        changed_data['Generate Summary of a Word or Phrase'] = wiki(latest_text)
+        latest_text = wiki(latest_text)
     if bool(form_data['remove_stop_words']):
         changed_data['Remove Stop Words of Your Paragraph'] = remove_stop_words(latest_text)
         latest_text = remove_stop_words(latest_text)

@@ -1,9 +1,12 @@
 import string
 import nltk
+import requests
 nltk.download('stopwords')
 nltk.download('punkt')
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from textblob import TextBlob
+from bs4 import BeautifulSoup
 
 
 def punctuation_removal(text):
@@ -37,11 +40,15 @@ def count_characters(text):
 
 
 def spell(text):
-    pass
+    b = TextBlob(text)
+    corrected_text = b.correct()
+    return corrected_text
 
 
 def wiki(text):
-    pass
+    summary = requests.get('https://en.wikipedia.org/wiki/'+text)
+    soup = BeautifulSoup(summary.text, 'lxml')
+    return soup.get_text()
 
 
 def remove_stop_words(text):
