@@ -1,6 +1,7 @@
 import string
 import nltk
 import requests
+import wikipedia
 nltk.download('stopwords')
 nltk.download('punkt')
 from nltk.corpus import stopwords
@@ -45,10 +46,20 @@ def spell(text):
     return corrected_text
 
 
+# def wiki(text):
+#     summary = requests.get('https://en.wikipedia.org/wiki/'+text)
+#     soup = BeautifulSoup(summary.text, 'lxml')
+#     return soup.get_text()
+
 def wiki(text):
-    summary = requests.get('https://en.wikipedia.org/wiki/'+text)
-    soup = BeautifulSoup(summary.text, 'lxml')
-    return soup.get_text()
+    try:
+        search_suggestion = wikipedia.search(text, results=5)
+        summary = wikipedia.summary(text)
+        return f'{summary}\n\n You might want to consider these words also: {", ".join(search_suggestion)}.'
+    except wikipedia.exceptions.DisambiguationError as e:
+        return f"The word '{text}' may refer to: {e.options}"
+    except wikipedia.exceptions.PageError:
+        return f'Your text "{text}" does not match the requirements for generating summary of a word. Try another word!'
 
 
 def remove_stop_words(text):

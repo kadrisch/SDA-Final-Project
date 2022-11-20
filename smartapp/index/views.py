@@ -42,7 +42,7 @@ def GuidePage(request):
         changed_data['Spell Check'] = spell(latest_text)
         latest_text = spell(latest_text)
     if bool(form_data['generate_word_summary']):
-        changed_data['Generate Summary of a Word or Phrase'] = wiki(latest_text)
+        changed_data['Generate Summary of a Word'] = wiki(latest_text)
         latest_text = wiki(latest_text)
     if bool(form_data['remove_stop_words']):
         changed_data['Remove Stop Words of Your Paragraph'] = remove_stop_words(latest_text)
