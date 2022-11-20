@@ -4,3 +4,4 @@ django-crispy-forms==1.14.0
 mysql-connector-python==8.0.29
 sqlparse==0.4.3
 tzdata==2022.6
+nltk==3.7
