@@ -212,19 +212,19 @@ h2{
     left:375px;
 }
 .guide{
-    border-radius:25px;
     border:3px solid #73AD21;
     border-color:Olive;
     box-shadow:20px 20px 10px grey;
     padding:20px;
     width:800px;
-    height:200px;
+    height:280px;
     position:fixed;
     top:120px;
     left:350px;
     font-family: "Lucida Console", "Courier New", monospace;
     line-height: 1.5;
     word-wrap:break-word;
+    overflow-y:auto;
 }
 .switch{
   position: relative;
