@@ -6,46 +6,84 @@
 		<div class="form-floating mt-4">
 			<textarea placeholder="Enter Your Text Here!" class="form-control" style="height:200px" name="textarea"></textarea>
 			<div class="main">
-				<br/>
-					<input type="checkbox" id="check1" class="toggle" name="RemovePunctuations">
-				    {{form.remove_punctuations}}
-					<label for="check2"> Remove Punctuation</label>
-				<br/>
-					<input type="checkbox" id="check2" class="toggle" name="UpperCase">
-				     {{ form.upper_case }}
-					<label for="check2">Upper Case</label>
-				<br/>
-					<input type="checkbox" id="check3" class="toggle" name="LowerCase">
-					 {{ form.lower_case }}
-					<label for="check3">Lower Case</label>
-				<br/>
-					<input type="checkbox" id="check4" class="toggle" name="NewLineRemove">
-					 {{ form.new_line_remove }}
-					<label for="check4">New Line Remove</label>
-				<br/>
-					<input type="checkbox" id="check5" class="toggle" name="ExtraSpaceRemove">
-					 {{ form.extra_space_remove }}
-					<label for="check5">Extra Space Remove</label>
-				<br/>
-					<input type="checkbox" id="check6" class="toggle" name="CountCharacters">
-					 {{ form.count_characters }}
-					<label for="check6">Count Characters</label>
-				<br/>
-					<input type="checkbox" id="check7" class="toggle" name="SpellCheck">
-					 {{ form.spell_check }}
-					<label for="check7">Spell Check</label>
-				<br/>
-					<input type="checkbox" id="check8" class="toggle" name="GenerateSummary">
-					 {{ form.generate_word_summary }}
-					<label for="check8">Generate Summary of a Word</label>
-				<br/>
-					<input type="checkbox" id="check9" class="toggle" name="RemoveStopWords">
-					 {{ form.remove_stop_words }}
-					<label for="check9">Remove Stop Words of Your Paragraph</label>
+				<table>
+					<tr>
+						<td>
+							<span class="switch">
+								<input type="checkbox" name="remove_punctuations" id="check1">
+								<label class="slider" for="check1"></label>
+							</span></td>
+						<td>Remove Punctuation</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="switch">
+								<input type="checkbox" name="upper_case" id="check2">
+								<label class="slider" for="check2"></label>
+							</span></td>
+						<td>Upper Case</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="switch">
+								<input type="checkbox" name="lower_case" id="check3">
+								<label class="slider" for="check3"></label>
+							</span></td>
+						<td>Lower Case</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="switch">
+								<input type="checkbox" name="new_line_remove" id="check4">
+								<label class="slider" for="check4"></label>
+							</span></td>
+						<td>New Line Remove</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="switch">
+								<input type="checkbox" name="extra_space_remove" id="check5">
+								<label class="slider" for="check5"></label>
+							</span></td>
+						<td>Extra Space Remove</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="switch">
+								<input type="checkbox" name="count_characters" id="check6">
+								<label class="slider" for="check6"></label>
+							</span></td>
+						<td>Count Characters</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="switch">
+								<input type="checkbox" name="spell_check" id="check7">
+								<label class="slider" for="check7"></label>
+							</span></td>
+						<td>Spell Check</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="switch">
+								<input type="checkbox" name="generate_word_summary" id="check8">
+								<label class="slider" for="check8"></label>
+							</span></td>
+						<td>Generate Word Summary</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="switch">
+								<input type="checkbox" name="remove_stop_words" id="check9">
+								<label class="slider" for="check9"></label>
+							</span></td>
+						<td>Remove Stop Words</td>
+					</tr>
+				</table>
 			</div>
-		</div>
+		</div><hr>
 		<a href="guide">
-        <button type="submit" class="btn btn-primary" >Submit</button>
+			<button type="submit" class="btn btn-primary" >Submit</button>
 		</a>
 	</form>
 {% endblock %}
