@@ -2,11 +2,12 @@ import string
 import nltk
 import requests
 import wikipedia
+import re
 nltk.download('stopwords')
 nltk.download('punkt')
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-from textblob import TextBlob
+from textblob import TextBlob, Word
 from bs4 import BeautifulSoup
 
 
@@ -41,9 +42,24 @@ def count_characters(text):
 
 
 def spell(text):
-    b = TextBlob(text)
-    corrected_text = b.correct()
-    return corrected_text
+    correct_text = TextBlob(text)
+    corrected_words = []
+    words = text.split()    # split the sentence into words
+    words = [word.lower() for word in words]
+    words = [re.sub(r'[^A-Za-z0-9]+', '', word) for word in words]
+    for word in words:
+        word = Word(word)
+        result = word.spellcheck()
+        if word == result[0][0]:
+            pass
+            # return f'Spelling of "{word}" is correct!'
+        else:
+            # return f'Spelling of "{word}" is not correct! Correct spelling of "{word}": "{result[0][0]}" (with {result[0][1]} confidence'
+            corrected_words.append(word)
+    corrected_text = correct_text.correct()
+    correctedwords = f"Corrected words: {', '.join(corrected_words)}"
+
+    return f"Correct sentence: {corrected_text}", correctedwords
 
 
 # def wiki(text):
