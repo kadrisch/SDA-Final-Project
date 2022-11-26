@@ -37,8 +37,15 @@ def remove_extra_space(text):     # removes duplicate whitespaces and newline ch
 
 
 def count_characters(text):
-    text = len(text)
-    return text
+    if text:
+        with_spaces = len(text)
+        without_spaces = len(text) - text.count(' ')
+        spaces = text.count(' ')
+        num_words = int(len(text.split()))
+
+        space_count = f"Spaces: {spaces};"
+
+        return f"All characters: {with_spaces}; Only characters without spaces: {without_spaces}; Words: {num_words};"
 
 
 def spell(text):
@@ -59,7 +66,7 @@ def spell(text):
     corrected_text = correct_text.correct()
     correctedwords = f"Corrected words: {', '.join(corrected_words)}"
 
-    return f"Correct sentence: {corrected_text}", correctedwords
+    return f"Correct text: {corrected_text}", correctedwords
 
 
 # def wiki(text):
